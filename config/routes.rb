@@ -3,5 +3,9 @@ Rails
   .routes
   .draw do
     root to: 'static_pages#root'
+    namespace :api, defaults: { format: :json } do
+      resources :users, only: %i[index show update create]
+    end
+    resource :session, only: %i[create destroy]
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
