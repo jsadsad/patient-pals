@@ -71,7 +71,7 @@ class SessionForm extends React.Component {
   render() {
     if (this.props.formType === 'login') {
       return (
-        <div>
+        <div className="loginSignupForm">
           <div>
             <Link to="/">Home Page</Link>
           </div>
@@ -96,6 +96,7 @@ class SessionForm extends React.Component {
                       onChange={this.handleField('email')}
                       placeholder="Email"
                       required
+                      className="form-control mb-md-3 mb-sm-1"
                     />
                     <input
                       type="password"
@@ -103,8 +104,13 @@ class SessionForm extends React.Component {
                       onChange={this.handleField('password')}
                       placeholder="Password"
                       required
+                      className="form-control mb-md-3 mb-sm-1"
                     />
-                    <button type="submit" value={this.props.formType}>
+                    <button
+                      type="submit"
+                      value={this.props.formType}
+                      class="btn btn-primary"
+                    >
                       {this.props.formType}
                     </button>
                     <div>
@@ -122,7 +128,7 @@ class SessionForm extends React.Component {
       )
     } else if (this.props.formType === 'signup') {
       return (
-        <div>
+        <div className="loginSignupForm">
           <div>
             <Link to="/">Home Page</Link>
           </div>
@@ -164,6 +170,7 @@ class SessionForm extends React.Component {
                       value={this.state.password}
                       onChange={this.handleField('password')}
                       placeholder="Password"
+                      className="form-control mb-md-3 mb-sm-1"
                       required
                     />
                   </div>

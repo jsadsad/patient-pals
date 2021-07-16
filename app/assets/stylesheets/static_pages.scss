@@ -1,3 +1,32 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$font-stack: Helvetica, sans-serif;
+$primary-color: rgb(199, 52, 52);
+
+html,
+body {
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  overflow-y: scroll;
+}
+
+#root,
+#App {
+  height: 100%;
+}
+
+.loginSignupForm {
+  width: 400px;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
