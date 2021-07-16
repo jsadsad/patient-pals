@@ -145,6 +145,7 @@ class SessionForm extends React.Component {
                       value={this.state.first_name}
                       onChange={this.handleField('first_name')}
                       placeholder="First Name"
+                      className="form-control mb-md-3 mb-sm-1"
                       required
                     />
                     <input
@@ -152,6 +153,7 @@ class SessionForm extends React.Component {
                       value={this.state.last_name}
                       onChange={this.handleField('last_name')}
                       placeholder="Last Name"
+                      className="form-control mb-md-3 mb-sm-1"
                       required
                     />
                   </div>
@@ -161,6 +163,7 @@ class SessionForm extends React.Component {
                       value={this.state.email}
                       onChange={this.handleField('email')}
                       placeholder="Email"
+                      className="form-control mb-md-3 mb-sm-1"
                       required
                     />
                   </div>
@@ -181,6 +184,7 @@ class SessionForm extends React.Component {
                       max="150"
                       value={this.state.age}
                       onChange={this.handleField('age')}
+                      className="form-control mb-md-3 mb-sm-1"
                       placeholder="Age"
                     />
                   </div>
@@ -190,11 +194,13 @@ class SessionForm extends React.Component {
                       value={this.state.location}
                       onChange={this.handleField('location')}
                       placeholder="Location"
+                      className="form-control mb-md-3 mb-sm-1"
                     />
                   </div>
                   <select
                     value={this.state.role}
                     onChange={this.handleField('role')}
+                    className="form-control mb-md-3 mb-sm-1"
                   >
                     <option value="" disabled defaultValue>
                       Role
@@ -202,7 +208,11 @@ class SessionForm extends React.Component {
                     <option value="Patient">Patient</option>
                     <option value="Patient Partner">Patient Partner</option>
                   </select>
-                  <button type="submit" value={this.props.formType}>
+                  <button
+                    type="submit"
+                    value={this.props.formType}
+                    class="btn btn-primary"
+                  >
                     {this.props.formType}
                   </button>
                   <div>
