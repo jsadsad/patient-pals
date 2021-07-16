@@ -9,10 +9,11 @@ class User < ApplicationRecord
               message: 'Password is too short. Minimum is 6 characters.',
             },
             allow_nil: true
-  validates :role, inclusion: {
-          in: %w[patient patient_partner].map { |r| r.titleize},
-          message: 'Please select your role',
-  }
+  validates :role,
+            inclusion: {
+              in: %w[patient patient_partner].map { |r| r.titleize },
+              message: 'Please select your role',
+            }
   validates :age,
             inclusion: {
               in: (13..149).to_a,
