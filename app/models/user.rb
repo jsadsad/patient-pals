@@ -10,7 +10,7 @@ class User < ApplicationRecord
             },
             allow_nil: true
   validates :role, inclusion: {
-          in: %i[patient patient_partner]
+          in: %w[patient patient_partner],
           message: 'Please select your role',
   }
   validates :age,
