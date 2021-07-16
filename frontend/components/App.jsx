@@ -1,5 +1,10 @@
 import React from 'react'
+import LandingPage from './landing/landing'
 
-const App = () => <div>Hello World</div>
+const App = () => (
+  <div>
+    <LandingPage />
+  </div>
+)
 
 export default App
