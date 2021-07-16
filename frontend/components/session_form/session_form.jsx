@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
       age: '',
       location: '',
       password: '',
+      role: '',
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.loginDemo = this.loginDemo.bind(this)
@@ -177,19 +178,23 @@ class SessionForm extends React.Component {
                     />
                   </div>
                   <div>
-                    <select
+                    <input
+                      type="text"
                       value={this.state.location}
                       onChange={this.handleField('location')}
-                    >
-                      <option value="" disabled defaultValue>
-                        Location
-                      </option>
-                      <option value="San Francisco">San Francisco</option>
-                      <option value="Portland">Portland</option>
-                      <option value="Seattle">Seattle</option>
-                      <option value="Los Angeles">Los Angeles</option>
-                    </select>
+                      placeholder="Location"
+                    />
                   </div>
+                  <select
+                    value={this.state.role}
+                    onChange={this.handleField('role')}
+                  >
+                    <option value="" disabled defaultValue>
+                      Role
+                    </option>
+                    <option value="Patient">Patient</option>
+                    <option value="Patient Partner">Patient Partner</option>
+                  </select>
                   <button type="submit" value={this.props.formType}>
                     {this.props.formType}
                   </button>
