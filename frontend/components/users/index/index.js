@@ -13,8 +13,7 @@ class UserIndex extends React.Component {
     const allUsers = users.map((user, idx) => {
       return (
         <div key={idx}>
-          {currentUser.role !== user.role ? 'I can DM' : "Can't DM"}
-          <UserIndexItem user={user} />
+          <UserIndexItem user={user} currentUser={currentUser} />
         </div>
       )
     })
