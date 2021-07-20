@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom'
 import configureStore from './store/store'
 import Root from './components/root'
 
-import * as APIUtil from './actions/session_actions'
+import * as MessageUtil from './actions/message_actions'
+import * as ConversationUtil from './actions/conversation_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store
@@ -26,5 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
   //TESTING
   window.getState = store.getState
   window.dispatch = store.dispatch
-  window.logout = APIUtil.logout
+  // window.createMessage = MessageUtil.createMessage
+  // window.createConversation = ConversationUtil.createConversation
 })
