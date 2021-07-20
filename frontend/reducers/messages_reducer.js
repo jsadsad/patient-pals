@@ -13,7 +13,7 @@ const messagesReducer = (oldState = {}, action) => {
       return Object.assign({}, oldState, { [action.message.id]: action.review })
     case RECEIVE_MESSAGES:
       return action.messages
-    case REMOVE_REVIEW:
+    case REMOVE_MESSAGE:
       const newState = Object.assign({}, oldState)
       delete newState[action.messageId]
       return newState
