@@ -7,11 +7,10 @@ class ConversationForm extends React.Component {
     super(props)
 
     this.state = {
-      senderId: this.props.currentUser.id,
+      senderId: this.props.currentUser,
       recipientId: this.props.recipientId,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.renderErrors = this.renderErrors.bind(this)
   }
 
   handleField(field) {
