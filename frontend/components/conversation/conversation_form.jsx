@@ -4,17 +4,13 @@ import MessageForm from '../message/message_form_container'
 class ConversationForm extends React.Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-      senderId: this.props.currentUser,
-      recipientId: this.props.recipientId,
-    }
   }
 
   render() {
+    const { currentUserId, conversationId } = this.props
     return (
       <div>
-        <MessageForm />
+        <MessageForm currentUserId={currentUserId} />
       </div>
     )
   }

@@ -4,15 +4,16 @@ class MessageForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      senderId: this.props.currentUserId,
-      // recipientId: this.props.recipientId,
+      body: '',
+      user_id: this.props.currentUserId,
+      conversation_id: this.props.conversationId,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.processForm(this.state)
+    this.props.processMessage(this.state)
   }
 
   handleField(field) {
@@ -25,7 +26,12 @@ class MessageForm extends React.Component {
   render() {
     return (
       <div>
-        <textarea rows="4" cols="50" />
+        <textarea
+          rows="4"
+          cols="50"
+          value={this.state.body}
+          onChange={this.handleField('body')}
+        />
         <button onClick={this.handleSubmit} type="submit">
           Send Message
         </button>

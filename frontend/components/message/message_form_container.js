@@ -4,7 +4,7 @@ import MessageForm from './message_form'
 
 const mapStateToProps = (state) => {
   return {
-    currentUserId: state.session.id,
+    conversationId: Number(Object.keys(state.entities.conversations)[0]),
   }
 }
 

@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { createConversation } from '../../actions/conversation_actions'
 import ConversationForm from './conversation_form'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     currentUserId: state.session.id,
   }
