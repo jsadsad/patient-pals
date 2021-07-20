@@ -20,7 +20,7 @@ export const fetchConversation = (conversationId) => {
   })
 }
 
-export const fetchConversations = (conversationId) => {
+export const fetchConversations = () => {
   return $.ajax({
     method: `GET`,
     url: `/api/conversations`,
