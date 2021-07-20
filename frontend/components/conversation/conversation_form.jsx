@@ -1,5 +1,5 @@
 import React from 'react'
-import MessageForm from '../message/message_form'
+import MessageForm from '../message/message_form_container'
 
 class ConversationForm extends React.Component {
   constructor(props) {

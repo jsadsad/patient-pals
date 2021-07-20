@@ -4,8 +4,8 @@ class MessageForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      senderId: this.props.currentUser,
-      recipientId: this.props.recipientId,
+      senderId: this.props.currentUserId,
+      // recipientId: this.props.recipientId,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
