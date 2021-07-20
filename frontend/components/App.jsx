@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
-import LandingPage from './landing/landing'
+import LandingPage from './landing/landing_container'
 import LoginFormContainer from './session_form/login_container'
 import SignupFormContainer from './session_form/signup_container'
 import { AuthRoute, ProtectedRoute } from '../utils/route_util'
