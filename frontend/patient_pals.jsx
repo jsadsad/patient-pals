@@ -5,6 +5,7 @@ import Root from './components/root'
 
 import * as MessageUtil from './actions/message_actions'
 import * as ConversationUtil from './actions/conversation_actions'
+import * as UserUtil from './actions/user_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store
@@ -29,4 +30,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch
   // window.createMessage = MessageUtil.createMessage
   // window.createConversation = ConversationUtil.createConversation
+  // window.fetchUsers = UserUtil.fetchUsers
 })
