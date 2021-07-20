@@ -4,10 +4,10 @@ export const RECEIVE_CONVERSATION = 'RECEIVE_CONVERSATION'
 export const RECEIVE_CONVERSATIONS = 'RECEIVE_CONVERSATIONS'
 export const REMOVE_CONVERSATION = 'REMOVE_CONVERSATION'
 
-const receiveConversation = (conversation) => {
+const receiveConversation = (payload) => {
   return {
     type: RECEIVE_CONVERSATION,
-    conversation,
+    payload,
   }
 }
 

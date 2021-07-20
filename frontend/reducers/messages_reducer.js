@@ -10,7 +10,9 @@ const messagesReducer = (oldState = {}, action) => {
   Object.freeze(oldState)
   switch (action.type) {
     case RECEIVE_MESSAGE:
-      return Object.assign({}, oldState, { [action.message.id]: action.review })
+      return Object.assign({}, oldState, {
+        [action.message.id]: action.message,
+      })
     case RECEIVE_MESSAGES:
       return action.messages
     case REMOVE_MESSAGE:

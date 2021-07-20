@@ -1,5 +1,5 @@
 import React from 'react'
-import UserIndexItem from '../index_item/index_item'
+import UserIndexItem from '../index_item/index_item_container'
 
 class UserIndex extends React.Component {
   componentDidMount() {
