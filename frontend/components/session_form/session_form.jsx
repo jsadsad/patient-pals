@@ -109,7 +109,7 @@ class SessionForm extends React.Component {
                     <button
                       type="submit"
                       value={this.props.formType}
-                      class="btn btn-primary"
+                      className="btn btn-primary"
                     >
                       {this.props.formType}
                     </button>
@@ -211,7 +211,7 @@ class SessionForm extends React.Component {
                   <button
                     type="submit"
                     value={this.props.formType}
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                   >
                     {this.props.formType}
                   </button>

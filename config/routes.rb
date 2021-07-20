@@ -6,5 +6,8 @@ Rails
     namespace :api, defaults: { format: :json } do
       resources :users, only: %i[index show update create]
       resource :session, only: %i[create destroy]
+      resources :conversations do
+        resources :messages
+      end
     end
   end
