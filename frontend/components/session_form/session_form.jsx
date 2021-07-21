@@ -2,6 +2,10 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
 
+String.prototype.capitalize = function () {
+  return this.charAt(0).toUpperCase() + this.slice(1)
+}
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props)
@@ -67,9 +71,6 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'login') {
       return (
         <div className="loginSignupForm">
-          <div>
-            <Link to="/">Home Page</Link>
-          </div>
           {this.renderErrors()}
           <div>
             <div>
@@ -106,7 +107,7 @@ class SessionForm extends React.Component {
                       value={this.props.formType}
                       className="btn btn-primary"
                     >
-                      {this.props.formType}
+                      {this.props.formType.capitalize()}
                     </button>
                     <div>
                       New To Patient Pals?
@@ -124,15 +125,11 @@ class SessionForm extends React.Component {
     } else if (this.props.formType === 'signup') {
       return (
         <div className="loginSignupForm">
-          <div>
-            <Link to="/">Home Page</Link>
-          </div>
           {this.renderErrors()}
           <div>
             <form onSubmit={this.handleSubmit}>
               <div>
                 <h3>Sign Up for Patient Pals</h3>
-                <div onClick={this.loginDemo}>Demo User</div>
                 <div>
                   <div>
                     <input
@@ -208,8 +205,9 @@ class SessionForm extends React.Component {
                     value={this.props.formType}
                     className="btn btn-primary"
                   >
-                    {this.props.formType}
+                    {this.props.formType.capitalize()}
                   </button>
+                  <div onClick={this.loginDemo}>Demo User</div>
                   <div>
                     Already on Patient-Pals? <Link to="/login">Log in</Link>
                   </div>
