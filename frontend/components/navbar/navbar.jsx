@@ -21,9 +21,9 @@ const NavBar = ({ currentUser, logout }) => {
           aria-labelledby="navbarDropdown"
         >
           <li>
-            <a className="dropdown-item" href="#">
+            <Link className="dropdown-item" to="/messsages">
               Messsages
-            </a>
+            </Link>
           </li>
           <li>
             <div className="dropdown-item" onClick={logout}>

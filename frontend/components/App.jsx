@@ -15,7 +15,7 @@ const App = () => (
       <Route exact path="/" component={LandingPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <Route path="/users" component={UserIndex} />
+      <ProtectedRoute path="/users" component={UserIndex} />
       <ProtectedRoute
         path={`/conversations/:conversationId/messages/new`}
         component={ConversationForm}
