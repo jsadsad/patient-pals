@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faComments } from '@fortawesome/free-solid-svg-icons'
 
 class UserIndexItem extends React.Component {
   constructor(props) {
@@ -29,7 +31,15 @@ class UserIndexItem extends React.Component {
         <p>{user.role}</p>
         {currentUser.role !== user.role ? (
           <button onClick={this.handleSubmit}>
-            <Link to={`/conversations/${user.id}/messages/new`}>Can Dm</Link>
+            <Link to={`/conversations/${user.id}/messages/new`}>
+              {' '}
+              <FontAwesomeIcon
+                icon={faComments}
+                color="blue"
+                size="lg"
+                fixedWidth
+              />
+            </Link>
           </button>
         ) : (
           ''
