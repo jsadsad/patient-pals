@@ -36,9 +36,9 @@ const NavBar = ({ currentUser, logout }) => {
   ) : (
     <ul className="navbar-nav">
       <li className="nav-item">
-        <a className="nav-link" href="#">
+        <Link className="nav-link" to="/login">
           Log In
-        </a>
+        </Link>
       </li>
     </ul>
   )
@@ -65,19 +65,19 @@ const NavBar = ({ currentUser, logout }) => {
         <div className="collapse navbar-collapse" id="navbarContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <Link className="nav-link active" to="/users">
                 Users
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/patients">
                 Patients
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="patient-partners">
                 Patient Partners
-              </a>
+              </Link>
             </li>
           </ul>
           {display}
