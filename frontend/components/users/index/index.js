@@ -11,11 +11,7 @@ class UserIndex extends React.Component {
     if (!users) return <h1>Loading...</h1>
 
     const allUsers = users.map((user, idx) => {
-      return (
-        <div key={idx}>
-          <UserIndexItem user={user} currentUser={currentUser} />
-        </div>
-      )
+      return <UserIndexItem user={user} currentUser={currentUser} />
     })
 
     return (

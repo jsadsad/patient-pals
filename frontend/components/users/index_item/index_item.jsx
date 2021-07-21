@@ -24,11 +24,11 @@ class UserIndexItem extends React.Component {
     if (!user) return <h1>Loading...</h1>
     return (
       <div className="user-index-item">
-        <p>
+        <h2>{user.role}</h2>
+        <h3>
           {user.firstName} {user.lastName}
-        </p>
-        <p>{user.location}</p>
-        <p>{user.role}</p>
+        </h3>
+        <p>Location: {user.location}</p>
         {currentUser.role !== user.role ? (
           <button onClick={this.handleSubmit}>
             <Link to={`/conversations/${user.id}/messages/new`}>
