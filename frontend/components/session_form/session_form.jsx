@@ -109,7 +109,7 @@ class SessionForm extends React.Component {
               <div>
                 New To Patient Pals?&nbsp; &nbsp;
                 <span>
-                  <Link className="signup-link" to="/signup">
+                  <Link className="signup-login-link" to="/signup">
                     Sign up!
                   </Link>
                 </span>
@@ -122,81 +122,92 @@ class SessionForm extends React.Component {
       return (
         <div className="login-signup-form">
           {this.renderErrors()}
-          <div>
+          <div className="signup-container">
             <form onSubmit={this.handleSubmit}>
               <div>
                 <h3>Sign Up for Patient Pals</h3>
-                <div>
-                  <input
-                    type="text"
-                    value={this.state.first_name}
-                    onChange={this.handleField('first_name')}
-                    placeholder="First Name"
-                    className="form-control mb-md-3 mb-sm-1"
-                    required
-                  />
-                  <input
-                    type="text"
-                    value={this.state.last_name}
-                    onChange={this.handleField('last_name')}
-                    placeholder="Last Name"
-                    className="form-control mb-md-3 mb-sm-1"
-                    required
-                  />
-                  <input
-                    type="email"
-                    value={this.state.email}
-                    onChange={this.handleField('email')}
-                    placeholder="Email"
-                    className="form-control mb-md-3 mb-sm-1"
-                    required
-                  />
-                  <input
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.handleField('password')}
-                    placeholder="Password"
-                    className="form-control mb-md-3 mb-sm-1"
-                    required
-                  />
-                  <input
-                    type="number"
-                    min="1"
-                    max="150"
-                    value={this.state.age}
-                    onChange={this.handleField('age')}
-                    className="form-control mb-md-3 mb-sm-1"
-                    placeholder="Age"
-                  />
-                  <input
-                    type="text"
-                    value={this.state.location}
-                    onChange={this.handleField('location')}
-                    placeholder="Location"
-                    className="form-control mb-md-3 mb-sm-1"
-                  />
-                  <select
-                    value={this.state.role}
-                    onChange={this.handleField('role')}
-                    className="form-control mb-md-3 mb-sm-1"
-                  >
-                    <option value="" disabled defaultValue>
-                      Role
-                    </option>
-                    <option value="Patient">Patient</option>
-                    <option value="Patient Partner">Patient Partner</option>
-                  </select>
+                <input
+                  className="form-control mb-md-3 mb-sm-1"
+                  type="text"
+                  value={this.state.first_name}
+                  onChange={this.handleField('first_name')}
+                  placeholder="First Name"
+                  required
+                />
+                <input
+                  className="form-control mb-md-3 mb-sm-1"
+                  type="text"
+                  value={this.state.last_name}
+                  onChange={this.handleField('last_name')}
+                  placeholder="Last Name"
+                  required
+                />
+                <input
+                  className="form-control mb-md-3 mb-sm-1"
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.handleField('email')}
+                  placeholder="Email"
+                  required
+                />
+                <input
+                  className="form-control mb-md-3 mb-sm-1"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handleField('password')}
+                  placeholder="Password"
+                  required
+                />
+                <input
+                  className="form-control mb-md-3 mb-sm-1"
+                  type="number"
+                  min="13"
+                  max="100"
+                  value={this.state.age}
+                  onChange={this.handleField('age')}
+                  placeholder="Age"
+                />
+                <input
+                  className="form-control mb-md-3 mb-sm-1"
+                  type="text"
+                  value={this.state.location}
+                  onChange={this.handleField('location')}
+                  placeholder="Location"
+                />
+                <select
+                  className="form-control mb-md-3 mb-sm-1"
+                  value={this.state.role}
+                  onChange={this.handleField('role')}
+                >
+                  <option value="" disabled defaultValue>
+                    Role ↓
+                  </option>
+                  <option value="Patient">Patient</option>
+                  <option value="Patient Partner">Patient Partner</option>
+                </select>
+                <div className="signup-button-container">
                   <button
+                    className="btn btn-primary"
                     type="submit"
                     value={this.props.formType}
-                    className="btn btn-primary"
                   >
                     {this.props.formType.capitalize()}
                   </button>
-                  <div onClick={this.loginDemo}>Demo User</div>
-                  <div>
-                    Already on Patient-Pals? <Link to="/login">Log in</Link>
-                  </div>
+                  <button
+                    type="button"
+                    className="btn btn-info"
+                    onClick={this.loginDemo}
+                  >
+                    Demo User
+                  </button>
+                </div>
+                <div>
+                  Already on Patient-Pals?&nbsp; &nbsp;
+                  <span>
+                    <Link className="signup-login-link" to="/login">
+                      Log in!
+                    </Link>
+                  </span>
                 </div>
               </div>
             </form>
