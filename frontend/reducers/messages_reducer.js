@@ -10,7 +10,6 @@ const messagesReducer = (oldState = {}, action) => {
   Object.freeze(oldState)
   switch (action.type) {
     case RECEIVE_MESSAGE:
-      debugger
       return Object.assign({}, oldState, {
         [action.payload.message.id]: action.payload,
       })

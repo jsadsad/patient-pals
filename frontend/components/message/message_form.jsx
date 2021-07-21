@@ -19,6 +19,7 @@ class MessageForm extends React.Component {
       user_id: this.props.currentUserId,
       conversation_id: this.props.conversationId,
     })
+    this.props.fetchMessages(this.props.conversationId)
   }
 
   handleSubmit(e) {
@@ -39,8 +40,9 @@ class MessageForm extends React.Component {
   }
 
   render() {
-    const { conversationId } = this.props
-    console.log('conversation id', conversationId)
+    const { conversationId, messages } = this.props
+    console.log('this is messsages', messages)
+
     if (!conversationId) return <h1>Loading...</h1>
     return (
       <div>
