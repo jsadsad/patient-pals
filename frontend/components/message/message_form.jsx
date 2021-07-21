@@ -1,4 +1,6 @@
 import React from 'react'
+import MessageBox from './message_box'
+import { withRouter } from 'react-router'
 
 class MessageForm extends React.Component {
   constructor(props) {
@@ -24,7 +26,9 @@ class MessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.processMessage(this.state)
+    this.props
+      .processMessage(this.state)
+      .then(() => this.props.history.goBack())
     this.setState({
       body: '',
     })
@@ -41,11 +45,10 @@ class MessageForm extends React.Component {
 
   render() {
     const { conversationId, messages } = this.props
-    console.log('this is messsages', messages)
-
-    if (!conversationId) return <h1>Loading...</h1>
+    if (!conversationId || !messages) return null
     return (
       <div>
+        <MessageBox messages={Object.values(messages)} />
         <textarea
           rows="4"
           cols="50"
@@ -60,4 +63,4 @@ class MessageForm extends React.Component {
   }
 }
 
-export default MessageForm
+export default withRouter(MessageForm)
