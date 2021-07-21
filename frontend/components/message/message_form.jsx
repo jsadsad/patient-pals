@@ -15,6 +15,19 @@ class MessageForm extends React.Component {
     this.props.clearConversation()
   }
 
+  componentDidUpdate(prevProps) {
+    const { messages, fetchMessages } = this.props
+    let didUpdate =
+      Object.keys(messages).length !== Object.keys(prevProps.messages).length
+    if (
+      didUpdate &&
+      Object.keys(messages).length &&
+      Object.keys(prevProps.messages).length
+    ) {
+      fetchMessages(this.props.conversationId)
+    }
+  }
+
   componentDidMount() {
     this.setState({
       body: '',
@@ -26,9 +39,7 @@ class MessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props
-      .processMessage(this.state)
-      .then(() => this.props.history.goBack())
+    this.props.processMessage(this.state)
     this.setState({
       body: '',
     })
