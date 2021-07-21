@@ -18,7 +18,6 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.loginDemo = this.loginDemo.bind(this)
     this.renderErrors = this.renderErrors.bind(this)
-    this.errorsOccured = this.errorsOccured.bind(this)
   }
 
   componentWillUnmount() {
