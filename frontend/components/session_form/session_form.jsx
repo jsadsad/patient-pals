@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
         email: 'test@example.com',
         password: 'password',
       })
-      .then(() => this.props.history.goBack())
+      .then(() => this.props.history.push('/users'))
   }
 
   handleSubmit(e) {
@@ -70,125 +70,111 @@ class SessionForm extends React.Component {
   render() {
     if (this.props.formType === 'login') {
       return (
-        <div className="loginSignupForm">
+        <div className="login-signup-form">
           {this.renderErrors()}
-          <div>
-            <div>
-              <div>Log in to Patient Pals</div>
+          <div className="login-container">
+            <h2>Log In</h2>
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="email"
+                value={this.state.email}
+                onChange={this.handleField('email')}
+                placeholder="Email"
+                required
+                className="form-control mb-md-3 mb-sm-1"
+              />
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.handleField('password')}
+                placeholder="Password"
+                required
+                className="form-control mb-md-3 mb-sm-1"
+              />
+              <button
+                type="submit"
+                value={this.props.formType}
+                className="btn btn-primary"
+              >
+                {this.props.formType.capitalize()}
+              </button>
+              &nbsp;
+              <button
+                type="button"
+                className="btn btn-info"
+                onClick={this.loginDemo}
+              >
+                Demo User
+              </button>
               <div>
-                New To Patient Pals?
+                New To Patient Pals?&nbsp; &nbsp;
                 <span>
-                  <Link to="/signup">Sign up!</Link>
+                  <Link className="signup-link" to="/signup">
+                    Sign up!
+                  </Link>
                 </span>
               </div>
-              <div onClick={this.loginDemo}>Demo User</div>
-              <div></div>
-              <form onSubmit={this.handleSubmit}>
-                <div>
-                  <div>
-                    <input
-                      type="email"
-                      value={this.state.email}
-                      onChange={this.handleField('email')}
-                      placeholder="Email"
-                      required
-                      className="form-control mb-md-3 mb-sm-1"
-                    />
-                    <input
-                      type="password"
-                      value={this.state.password}
-                      onChange={this.handleField('password')}
-                      placeholder="Password"
-                      required
-                      className="form-control mb-md-3 mb-sm-1"
-                    />
-                    <button
-                      type="submit"
-                      value={this.props.formType}
-                      className="btn btn-primary"
-                    >
-                      {this.props.formType.capitalize()}
-                    </button>
-                    <div>
-                      New To Patient Pals?
-                      <span>
-                        <Link to="/signup">Sign up!</Link>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
+            </form>
           </div>
         </div>
       )
     } else if (this.props.formType === 'signup') {
       return (
-        <div className="loginSignupForm">
+        <div className="login-signup-form">
           {this.renderErrors()}
           <div>
             <form onSubmit={this.handleSubmit}>
               <div>
                 <h3>Sign Up for Patient Pals</h3>
                 <div>
-                  <div>
-                    <input
-                      type="text"
-                      value={this.state.first_name}
-                      onChange={this.handleField('first_name')}
-                      placeholder="First Name"
-                      className="form-control mb-md-3 mb-sm-1"
-                      required
-                    />
-                    <input
-                      type="text"
-                      value={this.state.last_name}
-                      onChange={this.handleField('last_name')}
-                      placeholder="Last Name"
-                      className="form-control mb-md-3 mb-sm-1"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      value={this.state.email}
-                      onChange={this.handleField('email')}
-                      placeholder="Email"
-                      className="form-control mb-md-3 mb-sm-1"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="password"
-                      value={this.state.password}
-                      onChange={this.handleField('password')}
-                      placeholder="Password"
-                      className="form-control mb-md-3 mb-sm-1"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="number"
-                      min="1"
-                      max="150"
-                      value={this.state.age}
-                      onChange={this.handleField('age')}
-                      className="form-control mb-md-3 mb-sm-1"
-                      placeholder="Age"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      value={this.state.location}
-                      onChange={this.handleField('location')}
-                      placeholder="Location"
-                      className="form-control mb-md-3 mb-sm-1"
-                    />
-                  </div>
+                  <input
+                    type="text"
+                    value={this.state.first_name}
+                    onChange={this.handleField('first_name')}
+                    placeholder="First Name"
+                    className="form-control mb-md-3 mb-sm-1"
+                    required
+                  />
+                  <input
+                    type="text"
+                    value={this.state.last_name}
+                    onChange={this.handleField('last_name')}
+                    placeholder="Last Name"
+                    className="form-control mb-md-3 mb-sm-1"
+                    required
+                  />
+                  <input
+                    type="email"
+                    value={this.state.email}
+                    onChange={this.handleField('email')}
+                    placeholder="Email"
+                    className="form-control mb-md-3 mb-sm-1"
+                    required
+                  />
+                  <input
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.handleField('password')}
+                    placeholder="Password"
+                    className="form-control mb-md-3 mb-sm-1"
+                    required
+                  />
+                  <input
+                    type="number"
+                    min="1"
+                    max="150"
+                    value={this.state.age}
+                    onChange={this.handleField('age')}
+                    className="form-control mb-md-3 mb-sm-1"
+                    placeholder="Age"
+                  />
+                  <input
+                    type="text"
+                    value={this.state.location}
+                    onChange={this.handleField('location')}
+                    placeholder="Location"
+                    className="form-control mb-md-3 mb-sm-1"
+                  />
                   <select
                     value={this.state.role}
                     onChange={this.handleField('role')}

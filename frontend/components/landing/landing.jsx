@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const LandingPage = ({ currentUser, logout }) => {
   const display = currentUser ? (
     <div>
-      <h1>Hello {currentUser.firstName}</h1>
+      <h1>Hello, {currentUser.firstName}!</h1>
       <button onClick={logout}>Log out</button>
     </div>
   ) : (
