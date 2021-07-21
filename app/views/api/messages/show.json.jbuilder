@@ -1,2 +1,2 @@
-json.conversation { json.partial! '/api/messages/message', message: @message }
+json.message { json.partial! '/api/messages/message', message: @message }
 
