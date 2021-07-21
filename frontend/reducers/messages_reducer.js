@@ -4,21 +4,21 @@ import {
   REMOVE_MESSAGE,
 } from '../actions/message_actions'
 
-import { RECEIVE_CONVERSATION } from '../actions/conversation_actions'
+// import { RECEIVE_CONVERSATION } from '../actions/conversation_actions'
 
 const messagesReducer = (oldState = {}, action) => {
   Object.freeze(oldState)
   switch (action.type) {
     case RECEIVE_MESSAGE:
-      return Object.assign({}, oldState, { [action.message.id]: action.review })
+      return Object.assign({}, oldState, {
+        [action.payload.message.id]: action.payload,
+      })
     case RECEIVE_MESSAGES:
       return action.messages
     case REMOVE_MESSAGE:
       const newState = Object.assign({}, oldState)
       delete newState[action.messageId]
       return newState
-    case RECEIVE_CONVERSATION:
-      return Object.assign({}, oldState, action.messages)
     default:
       return oldState
   }

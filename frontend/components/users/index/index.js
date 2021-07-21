@@ -1,5 +1,5 @@
 import React from 'react'
-import UserIndexItem from '../index_item/index_item'
+import UserIndexItem from '../index_item/index_item_container'
 
 class UserIndex extends React.Component {
   componentDidMount() {
@@ -8,13 +8,12 @@ class UserIndex extends React.Component {
 
   render() {
     const { users, currentUser } = this.props
-    if (users === undefined) return null
+    if (!users) return <h1>Loading...</h1>
 
     const allUsers = users.map((user, idx) => {
       return (
         <div key={idx}>
-          {currentUser.role !== user.role ? 'I can DM' : "Can't DM"}
-          <UserIndexItem user={user} />
+          <UserIndexItem user={user} currentUser={currentUser} />
         </div>
       )
     })

@@ -2,6 +2,7 @@ import {
   RECEIVE_CONVERSATION,
   RECEIVE_CONVERSATIONS,
   REMOVE_CONVERSATION,
+  CLEAR_CONVERSATION,
 } from '../actions/conversation_actions'
 
 const conversationsReducer = (oldState = {}, action) => {
@@ -9,7 +10,7 @@ const conversationsReducer = (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_CONVERSATION:
       return Object.assign({}, oldState, {
-        [action.conversation.id]: action.conversation,
+        [action.payload.conversation.id]: action.payload,
       })
     case RECEIVE_CONVERSATIONS:
       return action.conversations
@@ -17,6 +18,8 @@ const conversationsReducer = (oldState = {}, action) => {
       const newState = Object.assign({}, oldState)
       delete newState[action.conversationId]
       return newState
+    case CLEAR_CONVERSATION:
+      return {}
     default:
       return oldState
   }

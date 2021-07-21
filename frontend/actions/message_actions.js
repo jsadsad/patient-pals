@@ -4,10 +4,10 @@ export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE'
 export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES'
 export const REMOVE_MESSAGE = 'REMOVE_MESSAGE'
 
-const receiveMessage = (message) => {
+const receiveMessage = (payload) => {
   return {
     type: RECEIVE_MESSAGE,
-    message,
+    payload,
   }
 }
 
