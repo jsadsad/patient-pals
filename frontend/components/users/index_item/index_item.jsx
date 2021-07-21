@@ -19,6 +19,7 @@ class UserIndexItem extends React.Component {
 
   render() {
     const { user, currentUser } = this.props
+    if (!user) return <h1>Loading...</h1>
     return (
       <div>
         {currentUser.role !== user.role ? (

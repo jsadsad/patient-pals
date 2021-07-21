@@ -8,9 +8,13 @@ class ConversationForm extends React.Component {
 
   render() {
     const { currentUserId, conversationId } = this.props
+    if (!currentUserId) return <h1>Loading...</h1>
     return (
       <div>
-        <MessageForm currentUserId={currentUserId} />
+        <MessageForm
+          currentUserId={currentUserId}
+          conversationId={conversationId}
+        />
       </div>
     )
   }

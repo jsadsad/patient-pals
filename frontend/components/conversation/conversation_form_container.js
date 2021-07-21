@@ -5,6 +5,7 @@ import ConversationForm from './conversation_form'
 const mapStateToProps = (state) => {
   return {
     currentUserId: state.session.id,
+    conversationId: Object.keys(state.entities.conversations)[0],
   }
 }
 

@@ -8,7 +8,7 @@ class UserIndex extends React.Component {
 
   render() {
     const { users, currentUser } = this.props
-    if (users === undefined) return null
+    if (!users) return <h1>Loading...</h1>
 
     const allUsers = users.map((user, idx) => {
       return (

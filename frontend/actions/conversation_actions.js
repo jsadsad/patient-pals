@@ -3,6 +3,7 @@ import * as ConversationUtil from '../utils/conversation_api_util'
 export const RECEIVE_CONVERSATION = 'RECEIVE_CONVERSATION'
 export const RECEIVE_CONVERSATIONS = 'RECEIVE_CONVERSATIONS'
 export const REMOVE_CONVERSATION = 'REMOVE_CONVERSATION'
+export const CLEAR_CONVERSATION = `CLEAR_CONVERSATION`
 
 const receiveConversation = (payload) => {
   return {
@@ -22,6 +23,12 @@ const removeConversation = (conversation) => {
   return {
     type: REMOVE_CONVERSATION,
     conversationId: conversation.id,
+  }
+}
+
+export const clearConversation = () => {
+  return {
+    type: CLEAR_CONVERSATION,
   }
 }
 

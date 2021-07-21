@@ -1,16 +1,18 @@
 import { connect } from 'react-redux'
 import { createMessage } from '../../actions/message_actions'
+import { clearConversation } from '../../actions/conversation_actions'
 import MessageForm from './message_form'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    conversationId: Number(Object.keys(state.entities.conversations)[0]),
+    conversationId: ownProps.conversationId,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     processMessage: (message) => dispatch(createMessage(message)),
+    clearConversation: () => dispatch(clearConversation()),
   }
 }
 

@@ -5,25 +5,43 @@ class MessageForm extends React.Component {
     super(props)
     this.state = {
       body: '',
-      user_id: this.props.currentUserId,
-      conversation_id: this.props.conversationId,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  componentWillUnmount() {
+    this.props.clearConversation()
+  }
+
+  componentDidMount() {
+    this.setState({
+      body: '',
+      user_id: this.props.currentUserId,
+      conversation_id: this.props.conversationId,
+    })
   }
 
   handleSubmit(e) {
     e.preventDefault()
     this.props.processMessage(this.state)
+    this.setState({
+      body: '',
+    })
   }
 
   handleField(field) {
     return (e) =>
       this.setState({
         [field]: e.currentTarget.value,
+        user_id: this.props.currentUserId,
+        conversation_id: this.props.conversationId,
       })
   }
 
   render() {
+    const { conversationId } = this.props
+    console.log('conversation id', conversationId)
+    if (!conversationId) return <h1>Loading...</h1>
     return (
       <div>
         <textarea

@@ -16,7 +16,7 @@ export const deleteConversation = (conversation) => {
 export const fetchConversation = (conversationId) => {
   return $.ajax({
     method: `GET`,
-    url: `/api/conversations/${conversationId}`,
+    url: `/api/conversations/${conversationId}/messages`,
   })
 }
 
