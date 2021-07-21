@@ -48,12 +48,8 @@ class SessionForm extends React.Component {
     this.props.processForm(user)
   }
 
-  errorsOccured() {
-    this.props.errors.session.length !== 0
-  }
-
   renderErrors() {
-    if (this.errorsOccured) {
+    if (this.props.errors.session.length !== 0) {
       return (
         <ul>
           {this.props.errors.session.map((error, idx) => (
