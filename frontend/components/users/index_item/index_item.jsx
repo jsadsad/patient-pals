@@ -21,20 +21,19 @@ class UserIndexItem extends React.Component {
     const { user, currentUser } = this.props
     if (!user) return <h1>Loading...</h1>
     return (
-      <div>
-        {currentUser.role !== user.role ? (
-          <button onClick={this.handleSubmit}>
-            <Link to={`/conversations/${user.id}/messages/new`}>Can Dm</Link>
-          </button>
-        ) : (
-          "Can't DM"
-        )}
+      <div className="user-index-item">
         <p>
           {user.firstName} {user.lastName}
         </p>
         <p>{user.location}</p>
         <p>{user.role}</p>
-        <hr />
+        {currentUser.role !== user.role ? (
+          <button onClick={this.handleSubmit}>
+            <Link to={`/conversations/${user.id}/messages/new`}>Can Dm</Link>
+          </button>
+        ) : (
+          ''
+        )}
       </div>
     )
   }
