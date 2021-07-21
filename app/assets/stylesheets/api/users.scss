@@ -1,3 +1,25 @@
-// Place all the styles related to the api/users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.users-wrap {
+  width: auto;
+  padding: 65px;
+  border-radius: 10px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.users-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-between;
+}
+
+.user-index-item {
+  background-color: #b1b1b1;
+  width: 300px;
+  margin: 20px 0px 20px 0px;
+  padding: 20px 0px 10px 10px;
+  border: solid #b0e0e6;
+  border-radius: 25px;
+}

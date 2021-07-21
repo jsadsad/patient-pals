@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faComments } from '@fortawesome/free-solid-svg-icons'
 
 class UserIndexItem extends React.Component {
   constructor(props) {
@@ -21,20 +23,27 @@ class UserIndexItem extends React.Component {
     const { user, currentUser } = this.props
     if (!user) return <h1>Loading...</h1>
     return (
-      <div>
+      <div className="user-index-item">
+        <h2>{user.role}</h2>
+        <h3>
+          {user.firstName} {user.lastName}
+        </h3>
+        <p>Location: {user.location}</p>
         {currentUser.role !== user.role ? (
           <button onClick={this.handleSubmit}>
-            <Link to={`/conversations/${user.id}/messages/new`}>Can Dm</Link>
+            <Link to={`/conversations/${user.id}/messages/new`}>
+              {' '}
+              <FontAwesomeIcon
+                icon={faComments}
+                color="blue"
+                size="lg"
+                fixedWidth
+              />
+            </Link>
           </button>
         ) : (
-          "Can't DM"
+          ''
         )}
-        <p>
-          {user.firstName} {user.lastName}
-        </p>
-        <p>{user.location}</p>
-        <p>{user.role}</p>
-        <hr />
       </div>
     )
   }

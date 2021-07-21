@@ -19,3 +19,32 @@ body {
 #App {
   height: 100%;
 }
+
+.landing-login-signup {
+  width: 40%;
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+}
+
+.landing-container {
+  width: auto;
+  padding: 10px;
+  margin: 10px;
+  & > button {
+    font-size: 21px;
+    width: 100%;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 50px;
+  }
+}

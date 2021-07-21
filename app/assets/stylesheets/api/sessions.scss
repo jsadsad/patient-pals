@@ -1,4 +1,4 @@
-.loginSignupForm {
+.login-signup-form {
   width: 400px;
   padding: 32px;
   border-radius: 10px;
@@ -7,4 +7,42 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.login-container {
+  font-size: 14px;
+  line-height: 60px;
+  margin: 12px 0px 12px 12px;
+  letter-spacing: 1px;
+}
+
+.signup-container {
+  font-size: 14px;
+  line-height: 60px;
+  margin: 12px 0px 12px 12px;
+  letter-spacing: 1px;
+  input[type] {
+    font-size: 14px;
+    margin: 18px 0px;
+    padding: 10px;
+  }
+}
+
+.signup-login-link {
+  text-decoration: none;
+  color: rgb(220, 53, 86);
+  &:hover {
+    color: rgb(114, 118, 250);
+  }
+}
+
+.signup-button-container {
+  display: flex;
+  & > button {
+    font-size: 18px;
+    width: 50%;
+    margin: 6px 4px 4px 0px;
+    font-style: italic;
+    font-weight: 400;
+  }
 }

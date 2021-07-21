@@ -4,19 +4,31 @@ import { Link } from 'react-router-dom'
 const LandingPage = ({ currentUser, logout }) => {
   const display = currentUser ? (
     <div>
-      <p>We are signed in</p>
-      <p>Hello {currentUser.firstName}</p>
+      <h1>Hello, {currentUser.firstName}!</h1>
       <button onClick={logout}>Log out</button>
     </div>
   ) : (
-    <div>
-      <p>We are not signed in</p>
-      <Link to="/login">Login</Link>
+    <div className="landing-container">
+      <button type="button" className="btn btn-info">
+        <Link to="/login" style={{ textDecoration: 'none', color: 'white' }}>
+          Login
+        </Link>
+      </button>
       <br />
-      <Link to="/signup">Sign up</Link>
+      <br />
+      <button type="button" className="btn btn-info">
+        <Link to="/signup" style={{ textDecoration: 'none', color: 'white' }}>
+          Sign up
+        </Link>
+      </button>
     </div>
   )
-  return <div>{display}</div>
+  return (
+    <div className="landing-login-signup">
+      <h4>Welcome to Patient Pals!</h4>
+      {display}
+    </div>
+  )
 }
 
 export default LandingPage
