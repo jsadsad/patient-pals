@@ -1,4 +1,6 @@
 import React from 'react'
+import MessageBox from './message_box'
+import { withRouter } from 'react-router'
 
 class MessageForm extends React.Component {
   constructor(props) {
@@ -11,6 +13,19 @@ class MessageForm extends React.Component {
 
   componentWillUnmount() {
     this.props.clearConversation()
+  }
+
+  componentDidUpdate(prevProps) {
+    const { messages, fetchMessages } = this.props
+    let didUpdate =
+      Object.keys(messages).length !== Object.keys(prevProps.messages).length
+    if (
+      didUpdate &&
+      Object.keys(messages).length &&
+      Object.keys(prevProps.messages).length
+    ) {
+      fetchMessages(this.props.conversationId)
+    }
   }
 
   componentDidMount() {
@@ -41,11 +56,10 @@ class MessageForm extends React.Component {
 
   render() {
     const { conversationId, messages } = this.props
-    console.log('this is messsages', messages)
-
-    if (!conversationId) return <h1>Loading...</h1>
+    if (!conversationId || !messages) return null
     return (
       <div>
+        <MessageBox messages={Object.values(messages)} />
         <textarea
           rows="4"
           cols="50"
@@ -60,4 +74,4 @@ class MessageForm extends React.Component {
   }
 }
 
-export default MessageForm
+export default withRouter(MessageForm)
