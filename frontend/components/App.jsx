@@ -10,6 +10,7 @@ import { AuthRoute, ProtectedRoute } from '../utils/route_util'
 import ConversationFormContainer from './conversation/conversation_form_container'
 import UserIndex from './users/index/index_container'
 import UserConversationContainer from './user_conversations/user_conversations_container'
+import NotFound from './404'
 
 const App = () => (
   <div id="App">
@@ -27,6 +28,7 @@ const App = () => (
       <ProtectedRoute path="/messages" component={UserConversationContainer} />
       <ProtectedRoute path="/patients" component={PatientIndex} />
       <ProtectedRoute exact path="/patient-partners" component={PartnerIndex} />
+      <Route path="/404" component={NotFound} />
       <Redirect to="/404" />
     </Switch>
   </div>
