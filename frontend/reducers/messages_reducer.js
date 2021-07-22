@@ -11,7 +11,7 @@ const messagesReducer = (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_MESSAGE:
       return Object.assign({}, oldState, {
-        [action.payload.message.id]: action.payload,
+        [action.payload.id]: action.payload,
       })
     case RECEIVE_MESSAGES:
       return action.messages

@@ -56,7 +56,7 @@ class MessageForm extends React.Component {
 
   render() {
     const { conversationId, messages, currentUserId, conversation } = this.props
-    console.log(messages)
+    console.log(conversation)
     if (!conversationId || !messages) return null
     return (
       <div className="col-sm-3 col-sm-offset-4 frame">
