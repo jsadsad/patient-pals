@@ -1,12 +1,15 @@
 import { connect } from 'react-redux'
-
 import { fetchConversations } from '../../actions/conversation_actions'
-
+import { getUserConversations } from '../../selectors/selectors'
 import UserConversations from './user_conversations'
 
-const mapStateToProps = ({ entities }) => {
+const mapStateToProps = ({ entities, session }) => {
   return {
-    userConversations: entities.conversations,
+    userId: session.id,
+    userConversations: getUserConversations(
+      Object.values(entities.conversations),
+      session.id
+    ),
   }
 }
 const mapDispatchToProps = (dispatch) => {

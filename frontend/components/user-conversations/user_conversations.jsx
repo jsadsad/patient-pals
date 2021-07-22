@@ -10,7 +10,7 @@ class UserConversations extends React.Component {
   }
 
   render() {
-    console.log(this.props.userConversations)
+    console.log(Object.values(this.props.userConversations))
     return <div>Hellloooo</div>
   }
 }
