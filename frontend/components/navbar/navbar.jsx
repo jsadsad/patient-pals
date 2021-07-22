@@ -75,7 +75,7 @@ const NavBar = ({ currentUser, logout }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="patient-partners">
+              <Link className="nav-link" to="/patient-partners">
                 Patient Partners
               </Link>
             </li>

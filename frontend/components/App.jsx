@@ -26,8 +26,8 @@ const App = () => (
       <ProtectedRoute path="/users" component={UserIndex} />
       <ProtectedRoute path="/messages" component={UserConversationContainer} />
       <ProtectedRoute path="/patients" component={PatientIndex} />
-      <ProtectedRoute path="/patient-partners" component={PartnerIndex} />
-      <Redirect to="/404" />
+      <ProtectedRoute exact path="/patient-partners" component={PartnerIndex} />
+      {/* <Redirect to="/404" /> */}
     </Switch>
   </div>
 )

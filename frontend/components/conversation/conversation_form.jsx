@@ -12,7 +12,8 @@ class ConversationForm extends React.Component {
   render() {
     const { currentUserId, conversationId, messages } = this.props
 
-    if (!currentUserId || !conversationId) return null
+    if (!currentUserId || !conversationId || messages)
+      return <h1>Loading...</h1>
 
     return (
       <div className="conversation-container col-md-8 offset-md-2">
