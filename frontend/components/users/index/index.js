@@ -15,7 +15,7 @@ class UserIndex extends React.Component {
     })
 
     return (
-      <div className="users-wrap">
+      <div className="users-wrap overflow-auto">
         <div className="users-container">{allUsers}</div>
       </div>
     )
