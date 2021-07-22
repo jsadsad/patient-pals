@@ -1,4 +1,5 @@
 import React from 'react'
+import { fetchUser } from '../../utils/user_api_util'
 
 class UserConversations extends React.Component {
   constructor(props) {
@@ -10,8 +11,23 @@ class UserConversations extends React.Component {
   }
 
   render() {
-    console.log(Object.values(this.props.userConversations))
-    return <div>Hellloooo</div>
+    const { userConversations } = this.props
+    const displayConversations = (conversations) => {
+      {
+        conversations.map((conversation) => (
+          <div>{conversation.recipientId}</div>
+        ))
+      }
+    }
+    return (
+      <div>
+        {userConversations.map((conversation, idx) => (
+          <ul key={idx}>
+            <li>{fetchUser(conversation.recipientId).firstName}</li>
+          </ul>
+        ))}
+      </div>
+    )
   }
 }
 
