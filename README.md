@@ -6,13 +6,20 @@ A small application to allow Patients and Patient Partners to communicate.
 
 ---
 
-## View this project at <a href="#" target="_blank">Insert Link Here</a>.
+## View this project hosted on <a href="https://patient-pals.herokuapp.com/#/" target="_blank">Heroku</a>.
 
 ---
 
-## Features
+# Technologies Used
 
-> For the future
+| Backend                                                    | Frontend                                                                      |
+| ---------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [Ruby on Rails](https://rubyonrails.org/)                  | [React](https://reactjs.org/)                                                 |
+| [PostgreSQL](https://www.postgresql.org/)                  | [Redux](https://redux.js.org/)                                                |
+| [jbuilder](https://github.com/rails/jbuilder)              | [Bootstrap](https://www.bootstrapcdn.com/)                                    |
+| [bcrypt](https://rubygems.org/gems/bcrypt/versions/3.1.12) | [FontAwesome](https://fontawesome.com/how-to-use/on-the-web/using-with/react) |
+
+## Future Ideas
 
 - Add Photos for Users
 - Web Sockets for realtime chat
