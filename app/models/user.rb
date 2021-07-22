@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   attr_reader :password
 
+  has_many :conversations, :foreign_key => :sender_id, class_name: 'Conversation'
+
   validates :email, presence: true, uniqueness: true
   validates :password_digest, :session_token, presence: true
   validates :password,
