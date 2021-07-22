@@ -88,14 +88,14 @@ conversation1 = Conversation.create!(
   sender_id: 1,
   recipient_id: 2,
   sender_name: "Scott Lang",
-  recipent_name: "Hank Pym"
+  recipient_name: "Hank Pym"
 )
 
 conversation2 = Conversation.create!(
   sender_id: 6,
   recipient_id: 7,
   sender_name: "Scott Lang",
-  recipent_name: "Hank Pym"
+  recipient_name: "Hank Pym"
 )
 
 

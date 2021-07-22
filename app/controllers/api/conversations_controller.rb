@@ -17,6 +17,6 @@ class Api::ConversationsController < ApplicationController
 
   private
   def conversation_params
-    params.require(:conversation).permit(:sender_id, :recipient_id, :sender_name, :recipent_name)
+    params.require(:conversation).permit(:sender_id, :recipient_id, :sender_name, :recipient_name)
   end
 end
