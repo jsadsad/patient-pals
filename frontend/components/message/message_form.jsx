@@ -70,7 +70,7 @@ class MessageForm extends React.Component {
           onChange={this.handleField('body')}
         />
         <button
-          class="btn btn-outline-primary"
+          className="btn btn-outline-primary"
           onClick={this.handleSubmit}
           type="submit"
         >
