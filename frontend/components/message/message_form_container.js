@@ -5,7 +5,7 @@ import MessageForm from './message_form'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    conversation: state.entities.conversations,
+    conversation: Object.values(state.entities.conversations),
     conversationId: ownProps.conversationId,
     messages: state.entities.messages,
   }
