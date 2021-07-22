@@ -6,4 +6,3 @@ json.extract! conversation,
               :recipient_name,
               :created_at,
               :updated_at
-
