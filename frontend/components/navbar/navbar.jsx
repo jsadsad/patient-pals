@@ -21,7 +21,7 @@ const NavBar = ({ currentUser, logout }) => {
           aria-labelledby="navbarDropdown"
         >
           <li>
-            <Link className="dropdown-item" to="/messsages">
+            <Link className="dropdown-item" to="/messages">
               Messsages
             </Link>
           </li>

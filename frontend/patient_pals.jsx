@@ -31,4 +31,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.createMessage = MessageUtil.createMessage
   // window.createConversation = ConversationUtil.createConversation
   // window.fetchUsers = UserUtil.fetchUsers
+  window.fetchUser = UserUtil.fetchUser
 })

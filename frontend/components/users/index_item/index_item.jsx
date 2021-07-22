@@ -9,6 +9,8 @@ class UserIndexItem extends React.Component {
     this.state = {
       sender_id: this.props.currentUser.id,
       recipient_id: this.props.user.id,
+      sender_name: `${this.props.currentUser.firstName} ${this.props.currentUser.lastName}`,
+      recipient_name: `${this.props.user.firstName} ${this.props.user.lastName}`,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -31,7 +33,7 @@ class UserIndexItem extends React.Component {
         <p>Location: {user.location}</p>
         {currentUser.role !== user.role ? (
           <button onClick={this.handleSubmit}>
-            <Link to={`/conversations/${user.id}/messages/new`}>
+            <Link to={`/conversations/${user.id}/messages`}>
               {' '}
               <FontAwesomeIcon
                 icon={faComments}
