@@ -54,8 +54,16 @@ class MessageForm extends React.Component {
       })
   }
 
+  sendTo(conversationObj, currentUserId, senderId) {
+    if (currentUserId === senderId) {
+      return <small>Send Message To {conversationObj[0].recipientName}</small>
+    } else {
+      return <small>Send Message To {conversationObj[0].senderName}</small>
+    }
+  }
+
   render() {
-    const { conversationId, messages, currentUserId } = this.props
+    const { conversationId, messages, currentUserId, conversation } = this.props
     if (!conversationId || !messages) return null
     return (
       <div className="col-sm-3 col-sm-offset-4 frame">
@@ -70,11 +78,11 @@ class MessageForm extends React.Component {
           onChange={this.handleField('body')}
         />
         <button
-          class="btn btn-outline-primary"
+          className="btn btn-outline-primary"
           onClick={this.handleSubmit}
           type="submit"
         >
-          Send Message
+          {this.sendTo(conversation, currentUserId, conversation[0].senderId)}
         </button>
       </div>
     )
