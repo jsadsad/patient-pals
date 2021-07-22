@@ -36,7 +36,7 @@ User.create!(
   last_name: 'Banner',
   email: 'test@example3.com',
   age: 35,
-  location: 'San Francisco',
+  location: 'Brooklyn',
   password: 'password',
   role: "Patient Partner"
 )
@@ -47,7 +47,7 @@ User.create!(
   last_name: 'Stark',
   email: 'test@example4.com',
   age: 21,
-  location: 'San Francisco',
+  location: 'Long Island',
   password: 'password',
   role: "Patient"
 )
@@ -57,29 +57,70 @@ User.create!(
   first_name: 'Stephen',
   last_name: 'Strange',
   email: 'test@example5.com',
-  age: 29,
-  location: 'San Francisco',
+  age: 30,
+  location: 'New York City',
   password: 'password',
   role: "Patient Partner"
 )
 
-conversation1 = Conversation.create!(
-  sender_id: 1,
-  recipient_id: 2
+user6 =
+User.create!(
+  first_name: 'Peter',
+  last_name: 'Parker',
+  email: 'test@example6.com',
+  age: 16,
+  location: 'Queens',
+  password: 'password',
+  role: "Patient"
+)
+user7 =
+User.create!(
+  first_name: 'Steve',
+  last_name: 'Rogers',
+  email: 'test@example7.com',
+  age: 80,
+  location: 'Brooklyn',
+  password: 'password',
+  role: "Patient"
 )
 
+conversation1 = Conversation.create!(
+  sender_id: 1,
+  recipient_id: 2,
+  sender_name: "Scott Lang",
+  recipent_name: "Hank Pym"
+)
+
+conversation2 = Conversation.create!(
+  sender_id: 6,
+  recipient_id: 7,
+  sender_name: "Scott Lang",
+  recipent_name: "Hank Pym"
+)
+
+
 message1 = Message.create!(
-  body: "Hello Dr. Pym",
+  body: "Hello, Dr. Pym!",
   conversation_id: 1,
   user_id: 1
 )
 
-
-
 message2 = Message.create!(
-  body: "Hello Scott",
+  body: "Hello Scott!",
   conversation_id: 1,
   user_id: 2
+)
+
+message1 = Message.create!(
+  body: "I'm a big fan of yours!!",
+  conversation_id: 2,
+  user_id: 6
+)
+
+message2 = Message.create!(
+  body: "Where are you from?",
+  conversation_id: 2,
+  user_id: 7
 )
 
 
