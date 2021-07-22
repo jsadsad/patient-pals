@@ -33,7 +33,7 @@ class UserIndexItem extends React.Component {
         <p>Location: {user.location}</p>
         {currentUser.role !== user.role ? (
           <button onClick={this.handleSubmit}>
-            <Link to={`/conversations/${user.id}/messages/new`}>
+            <Link to={`/conversations/${user.id}/messages`}>
               {' '}
               <FontAwesomeIcon
                 icon={faComments}

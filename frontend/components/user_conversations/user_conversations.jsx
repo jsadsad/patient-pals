@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class UserConversations extends React.Component {
   constructor(props) {
@@ -6,12 +7,7 @@ class UserConversations extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchConversations().then(() => {
-      for (let i = 0; i < this.props.userConversations.length; i++) {
-        let id = this.props.userConversations[i].recipientId
-        fetchUser(id)
-      }
-    })
+    this.props.fetchConversations()
   }
 
   render() {
@@ -27,11 +23,23 @@ class UserConversations extends React.Component {
     }
     return (
       <div>
-        {userConversations.map((conversation, idx) => (
-          <ul key={idx}>
-            <li>{conversation.recipientId}</li>
-          </ul>
-        ))}
+        {' '}
+        <table className="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="row">Active Conversations</th>
+            </tr>
+          </thead>
+          {userConversations.map((conversation, idx) => (
+            <tbody key={idx}>
+              <tr>
+                <td>
+                  {idx + 1}. {conversation.recipientName}
+                </td>
+              </tr>
+            </tbody>
+          ))}
+        </table>
       </div>
     )
   }
