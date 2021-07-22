@@ -9,6 +9,7 @@ import PartnerIndex from '../components/users/partners/partners_container'
 import { AuthRoute, ProtectedRoute } from '../utils/route_util'
 import ConversationForm from './conversation/conversation_form_container'
 import UserIndex from './users/index/index_container'
+import UserConversationContainer from './user-conversations/user_conversations_container'
 
 const App = () => (
   <div id="App">
@@ -18,6 +19,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute path="/users" component={UserIndex} />
+      <ProtectedRoute path="/messages" component={UserConversationContainer} />
       <ProtectedRoute path="/patients" component={PatientIndex} />
       <ProtectedRoute path="/patient-partners" component={PartnerIndex} />
       <ProtectedRoute

@@ -5,6 +5,8 @@ class UserConversations extends React.Component {
     super(props)
   }
   render() {
-    return <div>Conversations go here</div>
+    return <div>Hellloooo</div>
   }
 }
+
+export default UserConversations
