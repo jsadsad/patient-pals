@@ -83,6 +83,38 @@ user7 =
     role: 'Patient',
   )
 
+user8 =
+  User.create!(
+    first_name: 'Natasha',
+    last_name: 'Romanoff',
+    email: 'test@example8.com',
+    age: 30,
+    location: 'Stalingrad',
+    password: 'password',
+    role: 'Patient Partner',
+  )
+
+user9 =
+  User.create!(
+    first_name: 'Wanda',
+    last_name: 'Maximoff',
+    email: 'test@example9.com',
+    age: 25,
+    location: 'Sokovia',
+    password: 'password',
+    role: 'Patient',
+  )
+user10 =
+  User.create!(
+    first_name: 'Charles',
+    last_name: 'Xavier',
+    email: 'test@example10.com',
+    age: 75,
+    location: 'New York City',
+    password: 'password',
+    role: 'Patient Partner',
+  )
+
 conversation1 =
   Conversation.create!(
     sender_id: 1,
