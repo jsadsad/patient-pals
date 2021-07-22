@@ -55,7 +55,8 @@ class MessageForm extends React.Component {
   }
 
   render() {
-    const { conversationId, messages, currentUserId } = this.props
+    const { conversationId, messages, currentUserId, conversation } = this.props
+    console.log(messages)
     if (!conversationId || !messages) return null
     return (
       <div className="col-sm-3 col-sm-offset-4 frame">
@@ -74,7 +75,7 @@ class MessageForm extends React.Component {
           onClick={this.handleSubmit}
           type="submit"
         >
-          Send Message
+          Send Message To
         </button>
       </div>
     )
