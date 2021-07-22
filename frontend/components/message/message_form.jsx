@@ -55,18 +55,25 @@ class MessageForm extends React.Component {
   }
 
   render() {
-    const { conversationId, messages } = this.props
+    const { conversationId, messages, currentUserId } = this.props
     if (!conversationId || !messages) return null
     return (
-      <div>
-        <MessageBox messages={Object.values(messages)} />
+      <div className="col-sm-3 col-sm-offset-4 frame">
+        <MessageBox
+          messages={Object.values(messages)}
+          currentUserId={currentUserId}
+        />
         <textarea
           rows="4"
           cols="50"
           value={this.state.body}
           onChange={this.handleField('body')}
         />
-        <button onClick={this.handleSubmit} type="submit">
+        <button
+          class="btn btn-outline-primary"
+          onClick={this.handleSubmit}
+          type="submit"
+        >
           Send Message
         </button>
       </div>

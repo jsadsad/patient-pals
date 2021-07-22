@@ -1,3 +1,12 @@
-// Place all the styles related to the api/conversations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.conversation-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+  max-height: 75%;
+  overflow: scroll;
+  top: 50%;
+  transform: translateY(-50%);
+}

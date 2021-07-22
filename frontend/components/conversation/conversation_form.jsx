@@ -15,7 +15,7 @@ class ConversationForm extends React.Component {
     if (!currentUserId || !conversationId) return null
 
     return (
-      <div>
+      <div className="conversation-container col-md-8 offset-md-2">
         <MessageForm
           currentUserId={currentUserId}
           conversationId={conversationId}
