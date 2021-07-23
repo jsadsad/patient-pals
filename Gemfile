@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem "puma", ">= 4.3.8"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,6 +38,7 @@ gem 'jquery-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails', '~> 5.0.0'
 end
 
 group :development do
@@ -53,7 +54,6 @@ group :development do
   gem 'pry-rails'
   gem 'annotate'
   gem 'prettier'
-  gem 'rspec-rails', '~> 5.0.0'
 end
 
 group :test do
@@ -63,7 +63,6 @@ group :test do
 
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'rspec-rails', '~> 5.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
