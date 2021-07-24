@@ -1,8 +1,8 @@
-![Patient-Pals](production/images/Patient-Pals.gif)
-
 # Patient-Pals
 
-A small application to allow Patients and Patient Partners to communicate.
+This is a simple chat application using React, Redux, and Bootstrap Frontend with a Ruby on Rails Backend.
+
+![Patient-Pals](production/images/Patient-Pals.gif)
 
 ---
 
@@ -24,15 +24,74 @@ A small application to allow Patients and Patient Partners to communicate.
 - Add Photos for Users
 - Web Sockets for realtime chat
 
-### User Types
+### Table Types
 
 - **User Model**
 
+  - First Name
+  - Last Name
+  - Age
+  - Location
   - Email
   - Password
   - Role (Patient, Patient Partner)
 
-### Sections
+- **Conversation Model**
+
+  - Sender ID
+  - Recipient ID
+  - Sender Name
+  - Recipient Name
+
+- **Messages Model**
+
+  - Body
+  - Conversation ID
+  - User ID
+
+### Features
+
+1. Patient and Patient Partner Index
+
+Only Patients can message Patient Partners and vice versa.
+
+![Patient-Partners](production/images/Patient-Partners.png)
+
+```jsx
+{
+  currentUser.role !== user.role ? (
+    <button onClick={this.handleSubmit}>
+      <Link to={`/conversations/${user.id}/messages`}>
+        {' '}
+        <FontAwesomeIcon icon={faComments} color="blue" size="lg" fixedWidth />
+      </Link>
+    </button>
+  ) : (
+    ''
+  )
+}
+```
+
+2. Chat
+
+Utilizing componentDidUpdate(), I rendered chat messages as it persists in the database.
+
+```js
+  componentDidUpdate(prevProps) {
+    const { messages, fetchMessages } = this.props
+    let didUpdate =
+      Object.keys(messages).length !== Object.keys(prevProps.messages).length
+    if (
+      didUpdate &&
+      Object.keys(messages).length &&
+      Object.keys(prevProps.messages).length
+    ) {
+      fetchMessages(this.props.conversationId)
+    }
+  }
+```
+
+![Chat](production/images/Chat.png)
 
 ---
 
@@ -40,4 +99,3 @@ A small application to allow Patients and Patient Partners to communicate.
 
 - [Rspec Gem](https://github.com/rspec/rspec-rails)
 - [Build Your Chat Application on React & Rails — Part I | by Gunjan Solanki | Medium](https://gunjansolanki-007.medium.com/build-your-chat-application-on-react-rails-part-i-13ef1a5ad21c)
-- [Using Action Cable With React. For a recent project, I made a chat app… | by Dakota Lillie | Medium](https://medium.com/@dakota.lillie/using-action-cable-with-react-c37df065f296)
