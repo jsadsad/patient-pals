@@ -6,10 +6,6 @@ This is a simple chat application using React, Redux, and Bootstrap Frontend wit
 
 ---
 
-## View this project hosted on <a href="https://patient-pals.herokuapp.com/#/" target="_blank">Heroku</a>.
-
----
-
 # Technologies Used
 
 | Backend                                                    | Frontend                                                                      |
